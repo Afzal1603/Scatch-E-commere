@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <title>Document</title>
+</head>
+
+<body style="font-family: Montserrat;" class="text-white w-[100wh] h-[100vh] bg-zinc-900 px-10 py-20 font">
+  <div class="w-full h-auto flex flex-wrap justify-around ">
+    <div class="w-[500px] min-w-96 h-96 m-8 px-4 py-8">
+      <h1 class=" text-3xl tracking-tighter">welcome to <span class="text-blue-400 font-semibold">Scratch</span></h1>
+      <h4 class="mb-4">create your account</h4>
+      <form method="post" action="/users/register">
+        <input class="bg-transparent bg-zinc-600 rounded-md px-3 py-2 w-full outline-none mb-2" placeholder="Full Name"
+          type="text" name="fullName">
+        <input class="bg-transparent bg-zinc-600 rounded-md px-3 py-2 w-full outline-none mb-2" placeholder="Email"
+          type="email" name="email">
+        <input class="bg-transparent bg-zinc-600 rounded-md px-3 py-2 w-full outline-none mb-2" placeholder="Password"
+          type="password" name="password">
+        <input class="bg-blue-600 rounded-full px-3 py-2 w-auto outline-none" placeholder="name" type="submit"
+          value="create account">
+      </form>
+    </div>
+    <div class="w-[500px] min-w-96 h-96 m-8 px-4 py-20">
+      <h1 class=" text-xl tracking-tighter">Login Your Account</h1>
+      <form method="post" action="">
+        <input class="bg-transparent bg-zinc-600 rounded-md px-3 py-2 w-full outline-none mb-2" placeholder="Email"
+          type="email" name="email">
+        <input class="bg-transparent bg-zinc-600 rounded-md px-3 py-2 w-full outline-none mb-2" placeholder="Password"
+          type="password" name="password">
+        <input class="bg-blue-600 rounded-full px-3 py-2 w-auto outline-none" placeholder="name" type="submit"
+          value="Login">
+      </form>
+    </div>
+
+  </div>
+</body>
+
+</html>
