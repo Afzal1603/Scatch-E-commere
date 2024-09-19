@@ -1,0 +1,40 @@
+<%- include('./partials/header.ejs'); %>
+
+  <div class="bg-red-500 text-zinc-200 left-[40%] top-[2%] absolute text-sm font-light px-2 py-2 rounded-sm transition">
+    <h1>
+
+    </h1>
+  </div>
+
+  <div class="w-full h-auto flex flex-wrap justify-around ">
+    <div class="w-[500px] min-w-96 h-96 m-8 px-4 py-8">
+      <h1 class=" text-3xl tracking-tighter">welcome to <span class="text-blue-400 font-semibold">Scratch</span>
+      </h1>
+      <h4 class="mb-">create your account</h4>
+      <form method="post" action="/users/register">
+        <input class="bg-transparent bg-zinc-600 rounded-md px-3 py-2 w-full outline-none mb-2" placeholder="Full Name"
+          type="text" name="fullName">
+        <input class="bg-transparent bg-zinc-600 rounded-md px-3 py-2 w-full outline-none mb-2" placeholder="Email"
+          type="email" name="email">
+        <input class="bg-transparent bg-zinc-600 rounded-md px-3 py-2 w-full outline-none mb-2" placeholder="Password"
+          type="password" name="password">
+        <input class="bg-blue-600 rounded-full px-3 py-2 w-auto outline-none" placeholder="name" type="submit"
+          value="create account">
+      </form>
+    </div>
+    <div class="w-[500px] min-w-96 h-96 m-8 px-4 py-20">
+      <h1 class=" text-xl tracking-tighter mb-2">Login Your Account</h1>
+      <form method="post" action="/users/login">
+        <input class="bg-transparent bg-zinc-600 rounded-md px-3 py-2 w-full outline-none mb-2" placeholder="Email"
+          type="email" name="email">
+        <input class="bg-transparent bg-zinc-600 rounded-md px-3 py-2 w-full outline-none mb-2" placeholder="Password"
+          type="password" name="password">
+        <input class="bg-blue-600 rounded-full px-3 py-2 w-auto outline-none" placeholder="name" type="submit"
+          value="Login">
+      </form>
+    </div>
+
+  </div>
+  </body>
+
+  </html>

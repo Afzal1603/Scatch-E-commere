@@ -1,0 +1,64 @@
+<%- include('./partials/header'); %>
+  <% if(success1.length>0){ %>
+    <div
+      class="bg-green-500 text-zinc-200 left-[40%] top-[2%] absolute text-sm font-light px-2 py-2 rounded-sm transition">
+      <h1>
+        <%= success1 %>
+      </h1>
+    </div>
+    <%} %>
+      <div class="flex">
+        <aside class="w-[25%] min-w-[200px]">
+
+          <div class="flex gap-3 mb-20">
+            <h1>sort by</h1>
+            <select class="bg-transparent bg-zinc-700 px-[2px] py-[3px] rounded-sm outline-none" name="sort">
+              <option value="Popular">Popular</option>
+              <option value="Newest">Newest</option>
+            </select>
+          </div>
+          <div class="mb-20">
+            <a href="" class="block mb-4 hover:text-zinc-400">New Collection</a>
+            <a href="" class="block mb-4 hover:text-zinc-400">All Products</a>
+            <a href="" class="block mb-4 hover:text-zinc-400">Discounted Products</a>
+          </div>
+          <div class="">
+            <h1 class="block mb-4">Filter by: Newest</h1>
+            <h1 class="block mb-4">Availablity</h1>
+            <h1 class="block mb-4">Discount</h1>
+          </div>
+        </aside>
+        <div class="ml-20 h-full flex flex-wrap gap-6 mb-4">
+
+          <% products.forEach((product)=>{%>
+            <div class="w-60 h-[305px] bg-zinc-300 overflow-hidden">
+              <div class="w-full h-60 bg-[<%= product.bgcolor %>]">
+                <img class="w-full h-full object-cover"
+                  src="data:image/jpeg;base64,<%= product.image.toString('base64') %>" alt="">
+              </div>
+              <div class="bg-[<%= product.panelcolor %>] flex justify-between items-center px-4 py-3">
+                <div class="text-[<%= product.textcolor %>]">
+                  <h1>
+                    <%= product.name %>
+                  </h1>
+                  <h1>$ <%= product.price %>
+                  </h1>
+                </div>
+                <a href="/addtocart/<%= product._id %>"
+                  class="w-8 h-8 rounded-full bg-white text-black text-2xl flex justify-center items-center">+</a>
+              </div>
+
+            </div>
+            <%}) %>
+
+
+        </div>
+
+      </div>
+      </div>
+
+
+
+      </body>
+
+      </html>

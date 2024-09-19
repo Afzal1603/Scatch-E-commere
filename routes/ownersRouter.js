@@ -1,11 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const ownerModel = require("../models/owners-model");
-
-router.get("/", (req, res) => {
-  res.send("hey its working");
-});
-
+const productModel = require("../models/products-model");
+const upload = require("../config/multer-config");
 if (process.env.NODE_ENV === "development") {
   router.post("/create", async (req, res) => {
     let owner = await ownerModel.find();
@@ -22,5 +19,13 @@ if (process.env.NODE_ENV === "development") {
     res.status(201).send(createdOwner);
   });
 }
+
+router.get("/create-products", (req, res) => {
+  res.render("create-products");
+});
+router.get("/admin", (req, res) => {
+  let success = req.flash("success");
+  res.render("create-products", { success });
+});
 
 module.exports = router;
