@@ -1,40 +1,46 @@
 <%- include('./partials/header.ejs'); %>
-
-  <div class="bg-red-500 text-zinc-200 left-[40%] top-[2%] absolute text-sm font-light px-2 py-2 rounded-sm transition">
-    <h1>
-
-    </h1>
-  </div>
-
-  <div class="w-full h-auto flex flex-wrap justify-around ">
-    <div class="w-[500px] min-w-96 h-96 m-8 px-4 py-8">
-      <h1 class=" text-3xl tracking-tighter">welcome to <span class="text-blue-400 font-semibold">Scratch</span>
-      </h1>
-      <h4 class="mb-">create your account</h4>
-      <form method="post" action="/users/register">
-        <input class="bg-transparent bg-zinc-600 rounded-md px-3 py-2 w-full outline-none mb-2" placeholder="Full Name"
-          type="text" name="fullName">
-        <input class="bg-transparent bg-zinc-600 rounded-md px-3 py-2 w-full outline-none mb-2" placeholder="Email"
-          type="email" name="email">
-        <input class="bg-transparent bg-zinc-600 rounded-md px-3 py-2 w-full outline-none mb-2" placeholder="Password"
-          type="password" name="password">
-        <input class="bg-blue-600 rounded-full px-3 py-2 w-auto outline-none" placeholder="name" type="submit"
-          value="create account">
-      </form>
+  <% user.cart.forEach((item)=>{ %>
+    <div class="flex gap-8 w-full px-10 py-10 text-white">
+      <div class="bg-zinc-600 w-80 min-w-80 h-96 rounded-md  overflow-hidden">
+        <div class="w-full bg-[<%= item.bgcolor %>] h-72">
+          <img class="w-full h-full object-cover" src="data:image/jpeg;base64, <%= item.image.toString('base64') %>"
+            alt="">
+        </div>
+        <div class="px-5 w-full bg-[<%= item.panelcolor %>] h-12 flex justify-between items-center">
+          <h1 class="text-xl font-semibold">
+            <%= item.name %>
+          </h1>
+          <h2>1</h2>
+        </div>
+        <div class="px-5 w-full bg-[<%= item.textcolor %>] h-12 flex justify-between items-center">
+          <h1>Net Total</h1>
+          <h1>$ <%= item.price %>
+          </h1>
+        </div>
+      </div>
+      <div class="w-full">
+        <h1 class="mb-10 text-xl">Price Breakdown</h1>
+        <div class="grid grid-cols-2 gap-4 px-8 mb-8">
+          <h1>Total MRP</h1>
+          <h1>$ <%= item.price %>
+          </h1>
+          <h1>Discount on MRP</h1>
+          <h1>$ <%=Number( item.discount )%>
+          </h1>
+          <h1>Platform Fee</h1>
+          <h1>$ 5</h1>
+          <h1>Shipping Fee</h1>
+          <h1>FREE</h1>
+        </div>
+        <hr class="mb-8">
+        <div class="grid grid-cols-2 gap-4 px-8">
+          <h1>Total Amount</h1>
+          <h1>$ <%= Number(item.price-5-Number(item.discount)) %>
+          </h1>
+        </div>
+      </div>
     </div>
-    <div class="w-[500px] min-w-96 h-96 m-8 px-4 py-20">
-      <h1 class=" text-xl tracking-tighter mb-2">Login Your Account</h1>
-      <form method="post" action="/users/login">
-        <input class="bg-transparent bg-zinc-600 rounded-md px-3 py-2 w-full outline-none mb-2" placeholder="Email"
-          type="email" name="email">
-        <input class="bg-transparent bg-zinc-600 rounded-md px-3 py-2 w-full outline-none mb-2" placeholder="Password"
-          type="password" name="password">
-        <input class="bg-blue-600 rounded-full px-3 py-2 w-auto outline-none" placeholder="name" type="submit"
-          value="Login">
-      </form>
-    </div>
+    <% }) %>
+      </body>
 
-  </div>
-  </body>
-
-  </html>
+      </html>
